@@ -449,7 +449,19 @@ namespace SubjectNerd.QuickToggle
 			tempStyle = GUI.skin.FindStyle("OL Toggle");
 	        styleUnlocked = new GUIStyle(tempStyle);
 
-	        tempStyle = GUI.skin.FindStyle("VisibilityToggle");
+	        tempStyle = new GUIStyle()
+            {
+                normal = new GUIStyleState() { background = EditorGUIUtility.Load("Icons/animationvisibilitytoggleoff.png") as Texture2D },
+                onNormal = new GUIStyleState() { background = EditorGUIUtility.Load("Icons/animationvisibilitytoggleon.png") as Texture2D },
+                fixedHeight = 11,
+                fixedWidth = 13,
+                border = new RectOffset(2, 2, 2, 2),
+                overflow = new RectOffset(-1, 1, -2, 2),
+                padding = new RectOffset(3, 3, 3, 3),
+                richText = false,
+                stretchHeight = false,
+                stretchWidth = false,
+            };
 
 			styleVisOff = new GUIStyle(tempStyle);
             styleVisOn = new GUIStyle(tempStyle)
